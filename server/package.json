@@ -1,0 +1,63 @@
+{
+  "name": "meg-server-setup",
+  "version": "0.1.0",
+  "description": "MongoDB/Express/GraphQL Boilerplate Setup",
+  "engines": {
+    "npm": ">=6.4.1",
+    "node": ">=8.14.0"
+  },
+  "keywords": [
+    "mongodb",
+    "mongoose",
+    "express",
+    "graphql",
+    "apollo",
+    "apollo-server",
+    "boilerplate",
+    "starter-kit"
+  ],
+  "author": "Aakash Goel <se.aakashgoel@hotmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aakash-Goel/meg-server-setup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aakash-Goel/meg-server-setup/issues"
+  },
+  "homepage": "https://github.com/Aakash-Goel/meg-server-setup#readme",
+  "scripts": {
+    "start": "nodemon server.js",
+    "format": "prettier-eslint --write",
+    "lint": "npm run lint:js",
+    "lint:js": "npm run lint:eslint -- . ",
+    "lint:eslint": "eslint --ext .js --ignore-path .eslintignore",
+    "lint:check": "eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "lint:js:fix": "npm run lint:eslint -- . --fix",
+    "preformat": "npm run lint:check"
+  },
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "apollo-server-express": "^2.4.8",
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "graphql": "^14.1.1",
+    "ip": "^1.1.5",
+    "mongoose": "^5.4.16"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4",
+    "prettier-eslint-cli": "^4.7.1"
+  }
+}

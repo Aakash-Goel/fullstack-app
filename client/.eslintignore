@@ -1,0 +1,15 @@
+# Don't lint the following
+coverage
+docs
+snapshots
+dist
+build
+node_modules
+log
+logs
+mock
+reports
+stories
+# Make sure to INCLUDE the following,
+# because eslint ignores hidden/dotfiles by default.
+.storybook

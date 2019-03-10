@@ -1,0 +1,67 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "prettier",
+    "import"
+  ],
+  "globals": {
+    "document": true,
+    "window": true,
+    "process": true
+  },
+  "rules": {
+    "max-params": ["error", { "max": 7 }],
+    "max-statements": ["error", { "max": 100 }],
+    "max-lines": ["error", {"max": 1000}],
+    "complexity": ["error", { "max": 10 }],
+    "object-shorthand": ["warn", "properties"],
+    "array-callback-return": 2,
+    "consistent-return": 0,
+    "class-methods-use-this": 0,
+    "no-undef": 2,
+    "no-unused-vars": 2,
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowTaggedTemplates": true
+      }
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "__REDUX_DEVTOOLS_EXTENSION_COMPOSE__",
+          "_allPostsMeta"
+        ]
+      }
+    ],
+    "no-console": 1,
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/destructuring-assignment": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-filename-extension": 0,
+    "react/no-unused-prop-types": 0,
+    "react/react-in-jsx-scope": 0,
+    "import/no-extraneous-dependencies": 0,
+    "prettier/prettier": "error"
+  }
+}

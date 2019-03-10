@@ -59,3 +59,10 @@ typings/
 
 # next.js build output
 .next
+
+# production
+build
+dist
+
+# misc
+.DS_Store
