@@ -48,7 +48,7 @@ const defaultProps = {
   color: '',
   size: 'sm',
   simple: false,
-  round: false,
+  round: true,
   outlined: false,
   fullWidth: false,
   disabled: false,

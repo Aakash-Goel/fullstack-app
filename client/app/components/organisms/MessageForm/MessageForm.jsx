@@ -13,6 +13,7 @@ class MessageForm extends Component {
 
     this.state = {
       message: '',
+      messageArr: [],
     };
   }
 
@@ -54,6 +55,40 @@ class MessageForm extends Component {
         // console.log('response>>> ', response); // eslint-disable-line
         const { data } = response && response.body;
         console.log('response data>>> ', data); // eslint-disable-line
+        alert('Successfully Submitted!!!'); // eslint-disable-line
+      })
+      .catch(error => {
+        console.log('error>>> ', error); // eslint-disable-line
+      });
+  };
+
+  getMessages = () => {
+    const requestData = {
+      query: `
+        query {
+          messages {
+            _id
+            title
+          }
+        }
+      `,
+    };
+
+    ServiceUtil.triggerRequest({
+      url: 'http://localhost:4000/graphql',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: JSON.stringify(requestData),
+    })
+      .then(response => {
+        // console.log('response>>> ', response); // eslint-disable-line
+        const { data } = response && response.body;
+        console.log('response data>>> ', data); // eslint-disable-line
+        this.setState({
+          messageArr: data.messages,
+        });
       })
       .catch(error => {
         console.log('error>>> ', error); // eslint-disable-line
@@ -61,7 +96,7 @@ class MessageForm extends Component {
   };
 
   render() {
-    const { message } = this.state;
+    const { message, messageArr } = this.state;
 
     return (
       <div>
@@ -84,10 +119,23 @@ class MessageForm extends Component {
               </div>
               <div>
                 <Button type="submit" color="primary">
-                  Default
+                  Submit
                 </Button>
               </div>
             </form>
+          </GridItem>
+          <GridItem xs={10}>
+            <h2>List of messages sumitted:</h2>
+            <div>
+              <Button color="primary" outlined onClick={this.getMessages}>
+                Get All Messages
+              </Button>
+              {messageArr && messageArr.length > 0
+                ? messageArr.map((msz, index) => {
+                    return <p key={index}>{msz.title}</p>; // eslint-disable-line react/no-array-index-key
+                  })
+                : null}
+            </div>
           </GridItem>
         </GridContainer>
       </div>
