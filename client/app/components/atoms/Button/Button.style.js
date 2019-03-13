@@ -8,7 +8,7 @@ import {
   dangerColor,
 } from '../../../styles/theme/muiKit';
 
-const buttonStyle = {
+const buttonStyles = {
   button: {
     minHeight: 'auto',
     minWidth: 'auto',
@@ -480,4 +480,4 @@ const buttonStyle = {
   },
 };
 
-export default buttonStyle;
+export default buttonStyles;

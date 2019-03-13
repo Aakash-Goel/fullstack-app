@@ -5,7 +5,7 @@ import {
   defaultFont,
 } from '../../../styles/theme/muiKit';
 
-const customInputStyle = {
+const inputStyles = {
   disabled: {
     '&:before': {
       borderColor: 'transparent !important',
@@ -84,4 +84,4 @@ const customInputStyle = {
   },
 };
 
-export default customInputStyle;
+export default inputStyles;
