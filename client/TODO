@@ -1,0 +1,22 @@
+1. add “commitlintmsg” - Aakash
+2. fix hooks command - Aakash
+3. add more basic atoms - Aakash
+4. add fonts, icons - Aakash
+5. refine/add npm scripts, pre-commit hook - Aakash
+6. add proper documentation to all the files - Aakash
+7. update README file - Aakash
+8. Setup accessibility tool pa11y - Aakash
+
+9. Storybook development - Sachin
+
+10. setup test cases in jest and update the scripts command accordingly - Amresh
+
+11. travis-ci - Shivam
+
+
+12. Create logger utility
+13. Create config.js file for hostname, ports, etc
+14. lighthouse
+15. Theme
+16. jsDoc
+17. flow
