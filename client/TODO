@@ -1,8 +1,9 @@
-1. add “commitlintmsg” - Aakash
-2. fix hooks command - Aakash
+1. add “commitlintmsg” - Aakash - DONE
+2. fix hooks command - Aakash - DONE
 3. add more basic atoms - Aakash
 4. add fonts, icons - Aakash
-5. refine/add npm scripts, pre-commit hook - Aakash
+5. stylelintrc (css in js) - Aakash
+5. refine/add npm scripts, pre-commit hook - Aakash - DONE
 6. add proper documentation to all the files - Aakash
 7. update README file - Aakash
 8. Setup accessibility tool pa11y - Aakash
