@@ -1,14 +1,16 @@
 import {
   grayColor,
-  roseColor,
   primaryColor,
+  secondaryColor,
   infoColor,
   successColor,
   warningColor,
-  dangerColor,
+  errorColor,
+  blackColor,
+  whiteColor,
 } from '../../../styles/theme/muiKit';
 
-const buttonStyles = {
+const buttonStyles = theme => ({
   button: {
     minHeight: 'auto',
     minWidth: 'auto',
@@ -19,9 +21,9 @@ const buttonStyles = {
     border: 'none',
     borderRadius: '3px',
     position: 'relative',
-    padding: '12px 30px',
+    padding: '12px 26px',
     margin: '.3125rem 1px',
-    fontSize: '12px',
+    fontSize: '14px',
     fontWeight: '400',
     textTransform: 'uppercase',
     letterSpacing: '0',
@@ -75,13 +77,23 @@ const buttonStyles = {
     width: '100%',
   },
   primary: {
-    backgroundColor: primaryColor,
+    backgroundColor: theme.palette.primary.main,
     boxShadow:
       '0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12)',
     '&:hover,&:focus': {
-      backgroundColor: primaryColor,
+      backgroundColor: theme.palette.primary.main,
       boxShadow:
         '0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2)',
+    },
+  },
+  secondary: {
+    backgroundColor: theme.palette.secondary.main,
+    boxShadow:
+      '0 2px 2px 0 rgba(1, 167, 143, 0.14), 0 3px 1px -2px rgba(1, 167, 143, 0.2), 0 1px 5px 0 rgba(1, 167, 143, 0.12)',
+    '&:hover,&:focus': {
+      backgroundColor: theme.palette.secondary.main,
+      boxShadow:
+        '0 14px 26px -12px rgba(1, 167, 143, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(1, 167, 143, 0.2)',
     },
   },
   info: {
@@ -114,30 +126,30 @@ const buttonStyles = {
         '0 14px 26px -12px rgba(255, 152, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(255, 152, 0, 0.2)',
     },
   },
-  danger: {
-    backgroundColor: dangerColor,
+  error: {
+    backgroundColor: errorColor,
     boxShadow:
       '0 2px 2px 0 rgba(244, 67, 54, 0.14), 0 3px 1px -2px rgba(244, 67, 54, 0.2), 0 1px 5px 0 rgba(244, 67, 54, 0.12)',
     '&:hover,&:focus': {
-      backgroundColor: dangerColor,
+      backgroundColor: errorColor,
       boxShadow:
         '0 14px 26px -12px rgba(244, 67, 54, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2)',
     },
   },
-  rose: {
-    backgroundColor: roseColor,
+  black: {
+    backgroundColor: blackColor,
     boxShadow:
-      '0 2px 2px 0 rgba(233, 30, 99, 0.14), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.12)',
+      '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)',
     '&:hover,&:focus': {
-      backgroundColor: roseColor,
+      backgroundColor: blackColor,
       boxShadow:
-        '0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2)',
+        '0 14px 26px -12px rgba(0, 0, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
     },
   },
   white: {
     '&,&:focus,&:hover,&:visited': {
       backgroundColor: '#FFFFFF',
-      color: grayColor,
+      color: blackColor,
     },
   },
   twitter: {
@@ -199,6 +211,11 @@ const buttonStyles = {
         color: primaryColor,
       },
     },
+    '&$secondary': {
+      '&,&:focus,&:hover,&:visited': {
+        color: secondaryColor,
+      },
+    },
     '&$info': {
       '&,&:focus,&:hover,&:visited': {
         color: infoColor,
@@ -214,14 +231,19 @@ const buttonStyles = {
         color: warningColor,
       },
     },
-    '&$rose': {
+    '&$error': {
       '&,&:focus,&:hover,&:visited': {
-        color: roseColor,
+        color: errorColor,
       },
     },
-    '&$danger': {
+    '&$black': {
       '&,&:focus,&:hover,&:visited': {
-        color: dangerColor,
+        color: blackColor,
+      },
+    },
+    '&$white': {
+      '&,&:focus,&:hover,&:visited': {
+        color: whiteColor,
       },
     },
     '&$twitter': {
@@ -257,14 +279,14 @@ const buttonStyles = {
     pointerEvents: 'none',
   },
   lg: {
-    padding: '1.125rem 2.25rem',
-    fontSize: '0.875rem',
+    padding: '1rem 2.125rem',
+    fontSize: '1rem',
     lineHeight: '1.333333',
     borderRadius: '0.2rem',
   },
   sm: {
-    padding: '0.40625rem 1.25rem',
-    fontSize: '0.6875rem',
+    padding: '0.5rem 1.125rem',
+    fontSize: '0.75rem',
     lineHeight: '1.5',
     borderRadius: '0.2rem',
   },
@@ -291,6 +313,11 @@ const buttonStyles = {
         color: primaryColor,
       },
     },
+    '&$secondary': {
+      '&,&:focus,&:hover,&:visited': {
+        color: secondaryColor,
+      },
+    },
     '&$info': {
       '&,&:focus,&:hover,&:visited': {
         color: infoColor,
@@ -306,14 +333,19 @@ const buttonStyles = {
         color: warningColor,
       },
     },
-    '&$rose': {
+    '&$error': {
       '&,&:focus,&:hover,&:visited': {
-        color: roseColor,
+        color: errorColor,
       },
     },
-    '&$danger': {
+    '&$black': {
       '&,&:focus,&:hover,&:visited': {
-        color: dangerColor,
+        color: blackColor,
+      },
+    },
+    '&$white': {
+      '&,&:focus,&:hover,&:visited': {
+        color: whiteColor,
       },
     },
     '&$twitter': {
@@ -358,6 +390,15 @@ const buttonStyles = {
         color: '#fff',
       },
     },
+    '&$secondary': {
+      '&': {
+        color: secondaryColor,
+        border: `1px solid ${secondaryColor}`,
+      },
+      '&:hover,&:focus': {
+        color: '#fff',
+      },
+    },
     '&$info': {
       '&': {
         color: infoColor,
@@ -385,22 +426,31 @@ const buttonStyles = {
         color: '#fff',
       },
     },
-    '&$rose': {
+    '&$error': {
       '&': {
-        color: roseColor,
-        border: `1px solid ${roseColor}`,
+        color: errorColor,
+        border: `1px solid ${errorColor}`,
       },
       '&:hover,&:focus': {
         color: '#fff',
       },
     },
-    '&$danger': {
+    '&$black': {
       '&': {
-        color: dangerColor,
-        border: `1px solid ${dangerColor}`,
+        color: blackColor,
+        border: `1px solid ${blackColor}`,
       },
       '&:hover,&:focus': {
         color: '#fff',
+      },
+    },
+    '&$white': {
+      '&': {
+        color: whiteColor,
+        border: `1px solid ${whiteColor}`,
+      },
+      '&:hover,&:focus': {
+        color: '#000',
       },
     },
     '&$twitter': {
@@ -437,6 +487,11 @@ const buttonStyles = {
       },
       '&:hover,&:focus': {
         color: '#fff',
+      },
+    },
+    '&$transparent': {
+      '&': {
+        border: `none`,
       },
     },
   },
@@ -478,6 +533,6 @@ const buttonStyles = {
       },
     },
   },
-};
+});
 
 export default buttonStyles;

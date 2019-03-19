@@ -58,11 +58,13 @@ const defaultFont = {
 };
 
 const primaryColor = '#9c27b0';
-const warningColor = '#ff9800';
-const dangerColor = '#f44336';
-const successColor = '#4caf50';
+const secondaryColor = '#01a78f';
 const infoColor = '#00acc1';
-const roseColor = '#e91e63';
+const successColor = '#4caf50';
+const warningColor = '#ff9800';
+const errorColor = '#f44336';
+const whiteColor = '#fff';
+const blackColor = '#000';
 const grayColor = '#999999';
 
 const primaryBoxShadow = {
@@ -81,7 +83,7 @@ const warningBoxShadow = {
   boxShadow:
     '0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)',
 };
-const dangerBoxShadow = {
+const errorBoxShadow = {
   boxShadow:
     '0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2)',
 };
@@ -100,10 +102,10 @@ const successCardHeader = {
   background: 'linear-gradient(60deg, #66bb6a, #43a047)',
   ...successBoxShadow,
 };
-const dangerCardHeader = {
+const errorCardHeader = {
   color: '#fff',
   background: 'linear-gradient(60deg, #ef5350, #e53935)',
-  ...dangerBoxShadow,
+  ...errorBoxShadow,
 };
 const infoCardHeader = {
   color: '#fff',
@@ -173,21 +175,23 @@ export {
   card,
   defaultFont,
   primaryColor,
-  warningColor,
-  dangerColor,
-  successColor,
+  secondaryColor,
   infoColor,
-  roseColor,
+  successColor,
+  warningColor,
+  errorColor,
+  whiteColor,
+  blackColor,
   grayColor,
   primaryBoxShadow,
   infoBoxShadow,
   successBoxShadow,
   warningBoxShadow,
-  dangerBoxShadow,
+  errorBoxShadow,
   roseBoxShadow,
   warningCardHeader,
   successCardHeader,
-  dangerCardHeader,
+  errorCardHeader,
   infoCardHeader,
   primaryCardHeader,
   roseCardHeader,
