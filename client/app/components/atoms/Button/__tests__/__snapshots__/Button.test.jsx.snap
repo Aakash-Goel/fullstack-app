@@ -3,7 +3,7 @@
 exports[`<Button/> renders correctly 1`] = `
 <button
   ariaLabel="demo-aria"
-  className="MuiButtonBase-root-50 MuiButton-root-24 MuiButton-text-26 MuiButton-flat-29 CustomButton-button-1 true CustomButton-sm-18 CustomButton-round-19"
+  className="MuiButtonBase-root-50 MuiButton-root-24 MuiButton-text-26 MuiButton-flat-29 CustomButton-button-1 true CustomButton-sm-18 CustomButton-primary-3 CustomButton-round-19"
   disabled={false}
   onBlur={[Function]}
   onContextMenu={[Function]}

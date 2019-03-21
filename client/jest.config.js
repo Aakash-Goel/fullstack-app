@@ -6,10 +6,25 @@ module.exports = {
   clearMocks: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ['src/**/*.{js,jsx,mjs}'],
+  collectCoverageFrom: [
+    '**/src/components/**/*.{js}',
+    '!**/src/components/**/*{mock,stories,style,index}.{js}',
+    '!**/node_modules/**',
+    '!**/public/**',
+  ],
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: 'coverage',
+  coverageDirectory: '<rootDir>/reports/coverage',
+
+  // Coverage Threshold to pass the test
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+  },
 
   // An array of file extensions your modules use
   moduleFileExtensions: ['js', 'json', 'jsx'],
