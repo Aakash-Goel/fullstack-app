@@ -1,21 +1,30 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-// import { createShallow } from '@material-ui/core/test-utils';
 
 import Button from '../Button';
 
 describe('<Button/>', () => {
-  it('renders correctly', () => {
-    const props = {
-      color: 'primary',
-      classes: { button: true },
+  it('renders correctly with props', () => {
+    const styles = {
+      bgColor: {
+        backgroudColor: '#f9a825',
+      },
     };
     const tree = renderer
-      .create(<Button {...props} ariaLabel="demo-aria" />)
+      .create(
+        <Button
+          color="primary"
+          style={styles.bgColor}
+          variant="fab"
+          aria-label="Checkout"
+        >
+          Click Here
+        </Button>
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('renders correctly', () => {
+  it('renders correctly with empty props', () => {
     const tree = renderer.create(<Button />).toJSON();
     expect(tree).toMatchSnapshot();
   });

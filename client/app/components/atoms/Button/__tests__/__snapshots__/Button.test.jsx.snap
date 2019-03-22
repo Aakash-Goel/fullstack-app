@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button/> renders correctly 1`] = `
+exports[`<Button/> renders correctly with empty props 1`] = `
 <button
-  ariaLabel="demo-aria"
-  className="MuiButtonBase-root-50 MuiButton-root-24 MuiButton-text-26 MuiButton-flat-29 CustomButton-button-1 true CustomButton-sm-18 CustomButton-primary-3 CustomButton-round-19"
+  className="MuiButtonBase-root-50 MuiButton-root-24 MuiButton-text-26 MuiButton-flat-29 CustomButton-button-1 CustomButton-sm-18 CustomButton-round-19"
   disabled={false}
   onBlur={[Function]}
   onContextMenu={[Function]}
@@ -28,9 +27,10 @@ exports[`<Button/> renders correctly 1`] = `
 </button>
 `;
 
-exports[`<Button/> renders correctly 2`] = `
+exports[`<Button/> renders correctly with props 1`] = `
 <button
-  className="MuiButtonBase-root-50 MuiButton-root-24 MuiButton-text-26 MuiButton-flat-29 CustomButton-button-1 CustomButton-sm-18 CustomButton-round-19"
+  aria-label="Checkout"
+  className="MuiButtonBase-root-50 MuiButton-root-24 MuiButton-fab-41 MuiButton-contained-35 MuiButton-raised-38 CustomButton-button-1 CustomButton-sm-18 CustomButton-primary-3 CustomButton-round-19"
   disabled={false}
   onBlur={[Function]}
   onContextMenu={[Function]}
@@ -43,12 +43,19 @@ exports[`<Button/> renders correctly 2`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  style={
+    Object {
+      "backgroudColor": "#f9a825",
+    }
+  }
   tabIndex="0"
   type="button"
 >
   <span
     className="MuiButton-label-25"
-  />
+  >
+    Click Here
+  </span>
   <span
     className="MuiTouchRipple-root-53"
   />

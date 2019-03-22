@@ -7,10 +7,10 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    '**/src/components/**/*.{js}',
-    '!**/src/components/**/*{mock,stories,style,index}.{js}',
+    '**/app/components/**/*.{js,jsx}',
+    '!**/app/components/**/*{mock,stories,style,index}.{js}',
     '!**/node_modules/**',
-    '!**/public/**',
+    '!**/build/**',
   ],
 
   // The directory where Jest should output its coverage files
@@ -27,7 +27,7 @@ module.exports = {
   },
 
   // An array of file extensions your modules use
-  moduleFileExtensions: ['js', 'json', 'jsx'],
+  moduleFileExtensions: ['js', 'jsx'],
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   setupFiles: ['<rootDir>/enzyme.config.js'],

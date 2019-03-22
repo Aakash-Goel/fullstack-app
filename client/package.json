@@ -43,7 +43,7 @@
     "lint:js": "npm run lint:eslint -- . ",
     "lint:js:fix": "npm run lint:eslint -- . --fix",
     "pretest": "npm run test:clean",
-    "test:clean": "rimraf ./coverage",
+    "test:clean": "rimraf ./reports/coverage",
     "test": "jest --coverage=false",
     "test:watch": "jest --watch",
     "test:update-snapshot": "jest --updateSnapshot --coverage=false",
