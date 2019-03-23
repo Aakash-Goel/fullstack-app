@@ -16,7 +16,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
-import CssBaseline from '@material-ui/core/CssBaseline';
 
 import createStore from '../store/store';
 
@@ -34,7 +33,6 @@ class MyApp extends App {
     const { Component, pageProps, store } = this.props;
     return (
       <Container>
-        <CssBaseline />
         <Provider store={store}>
           <Component {...pageProps} />
         </Provider>

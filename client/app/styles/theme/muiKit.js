@@ -51,8 +51,14 @@ const card = {
   background: '#fff',
 };
 
+const primaryFontFamily =
+  '-apple-system, BlinkMacSystemFont, "Roboto", "Helvetica", "Arial", sans-serif';
+
+const secondaryFontFamily =
+  '-apple-system, BlinkMacSystemFont, "Rubik", "Helvetica Neue", "Arial", sans-serif';
+
 const defaultFont = {
-  fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  fontFamily: primaryFontFamily,
   fontWeight: '300',
   lineHeight: '1.5em',
 };
@@ -147,7 +153,7 @@ const defaultBoxShadow = {
 
 const title = {
   fontWeight: '300',
-  fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`,
+  fontFamily: secondaryFontFamily,
 };
 
 const cardTitle = {
@@ -173,6 +179,8 @@ export {
   conatinerFluid,
   boxShadow,
   card,
+  primaryFontFamily,
+  secondaryFontFamily,
   defaultFont,
   primaryColor,
   secondaryColor,

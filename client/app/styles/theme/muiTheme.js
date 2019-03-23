@@ -34,6 +34,7 @@ import {
   successColor,
   warningColor,
   grayColor,
+  primaryFontFamily,
 } from './muiKit';
 
 /**
@@ -63,6 +64,9 @@ const muiTheme = {
         grey: grayColor,
       },
     },
+  },
+  typography: {
+    fontFamily: primaryFontFamily,
   },
 };
 
