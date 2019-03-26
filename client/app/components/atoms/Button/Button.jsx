@@ -14,12 +14,14 @@ import buttonStyles from './Button.style';
 const propTypes = {
   classes: object.isRequired,
   color: oneOf([
+    '',
     'primary',
+    'secondary',
     'info',
     'success',
     'warning',
-    'danger',
-    'rose',
+    'error',
+    'black',
     'white',
     'facebook',
     'twitter',
@@ -27,7 +29,7 @@ const propTypes = {
     'github',
     'transparent',
   ]),
-  size: oneOf(['sm', 'lg']),
+  size: oneOf(['', 'sm', 'lg']),
   simple: bool,
   round: bool,
   outlined: bool,
@@ -46,7 +48,7 @@ const propTypes = {
  */
 const defaultProps = {
   color: '',
-  size: 'sm',
+  size: '',
   simple: false,
   round: true,
   outlined: false,

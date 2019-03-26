@@ -7,9 +7,35 @@
  * Here you can import styles defined in muiKit.js and
  * override default MaterialUI theme.
  *
+ * Check out the full list of default theme section of Material-UI
+ *  https://material-ui.com/customization/default-theme/
+ *
+ * You can also define your custom options like
+ *  palette: {
+ *    myCustomOption: {
+ *      myCustomButtonColor: '#000',
+ *    }
+ *  }
+ * Then, you can access `myCustomButtonColor` object inside your component styles as
+ *  `theme.palette.myCustomOption.myCustomButtonColor` // Result -> '#000'
+ *
+ * Check out theme section of Materail-UI to know more
+ *  https://material-ui.com/customization/themes/#custom-variables
+ *
  */
 
-import purple from '@material-ui/core/colors/purple';
+import {
+  primaryColor,
+  secondaryColor,
+  errorColor,
+  blackColor,
+  whiteColor,
+  infoColor,
+  successColor,
+  warningColor,
+  grayColor,
+  primaryFontFamily,
+} from './muiKit';
 
 /**
  * Module variables.
@@ -17,7 +43,30 @@ import purple from '@material-ui/core/colors/purple';
  */
 const muiTheme = {
   palette: {
-    primary: purple,
+    common: {
+      black: blackColor,
+      white: whiteColor,
+    },
+    primary: {
+      main: primaryColor,
+    },
+    secondary: {
+      main: secondaryColor,
+    },
+    error: {
+      main: errorColor,
+    },
+    custom: {
+      color: {
+        info: infoColor,
+        success: successColor,
+        warning: warningColor,
+        grey: grayColor,
+      },
+    },
+  },
+  typography: {
+    fontFamily: primaryFontFamily,
   },
 };
 

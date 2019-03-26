@@ -1,6 +1,6 @@
 import {
   primaryColor,
-  dangerColor,
+  errorColor,
   successColor,
   defaultFont,
 } from '../../../styles/theme/muiKit';
@@ -22,7 +22,7 @@ const inputStyles = {
   },
   underlineError: {
     '&:after': {
-      borderColor: dangerColor,
+      borderColor: errorColor,
     },
   },
   underlineSuccess: {
@@ -50,7 +50,7 @@ const inputStyles = {
     },
   },
   labelRootError: {
-    color: `${dangerColor} !important`,
+    color: `${errorColor} !important`,
   },
   labelRootSuccess: {
     color: `${successColor} !important`,

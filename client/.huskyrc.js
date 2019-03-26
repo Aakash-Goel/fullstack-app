@@ -1,5 +1,5 @@
 const commitmsg = `
-# Hey there
+# Hey there!
 #
 # We just wanted to let you know that we care a great deal about
 # making our git history clean, maintainable and easy to access for
@@ -17,14 +17,17 @@ const commitmsg = `
 #    type, an optional scope, and a subject
 #       + <type> describes the kind of change that this commit is
 #                providing. Allowed types are:
+#             * build
+#             * ci
+#             * chore (maintain)
+#             * docs (documentation)
 #             * feat (feature)
 #             * fix (bug fix)
-#             * docs (documentation)
-#             * style (formatting, missing semicolons, …)
-#             * refactor
-#             * test (when adding missing tests)
-#             * chore (maintain)
 #             * perf (performance)
+#             * refactor
+#             * revert
+#             * style (formatting, missing semicolons, …)
+#             * test (when adding missing tests)
 #       + <scope> can be anything specifying the place of the commit
 #                 change
 #       + <subject> is a very short description of the change, in
@@ -38,7 +41,7 @@ const commitmsg = `
 #   - fix: feature name bug fix
 #   - feat(feature-name) feature added
 #
-# Thank you
+# Thank you!
 `;
 
 module.exports = {

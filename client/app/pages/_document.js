@@ -21,10 +21,15 @@ import {
   MuiThemeProvider,
   createGenerateClassName,
   createMuiTheme,
+  withStyles,
 } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import muiTheme from '../styles/theme/muiTheme';
 import catchErrors from '../utils/errorBoundary';
+import preloadAssets from '../utils/preloadAssets';
+import { WEB_FONTS_PATH } from '../constants';
+import globalStyles from '../styles/globalStyles';
 
 /**
  * Module variables.
@@ -40,16 +45,21 @@ export default class MyDocument extends Document {
     // Create a sheetsManager instance.
     const sheetsManager = new Map();
     // Create App instance.
-    const page = renderPage(App => props => (
-      <JssProvider
-        registry={sheetsRegistry}
-        generateClassName={generateClassName}
-      >
-        <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>
-          <App {...props} />
-        </MuiThemeProvider>
-      </JssProvider>
-    ));
+    const page = renderPage(App => props => {
+      const Component = withStyles(globalStyles)(App);
+
+      return (
+        <JssProvider
+          registry={sheetsRegistry}
+          generateClassName={generateClassName}
+        >
+          <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>
+            <CssBaseline />
+            <Component {...props} />
+          </MuiThemeProvider>
+        </JssProvider>
+      );
+    });
     // Grab CSS from our sheetsRegistry.
     const css = sheetsRegistry.toString();
 
@@ -70,11 +80,13 @@ export default class MyDocument extends Document {
 
   render() {
     const Content = catchErrors(Main);
+    const preLoadFonts = WEB_FONTS_PATH || [];
 
     return (
       <html lang="en">
         <Head>
           <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
+          {preloadAssets(preLoadFonts, 'font')}
         </Head>
         <body className="app">
           <Content />
