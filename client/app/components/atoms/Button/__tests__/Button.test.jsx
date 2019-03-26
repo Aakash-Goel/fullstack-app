@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 import Button from '../Button';
 
@@ -12,12 +13,7 @@ describe('<Button/>', () => {
     };
     const tree = renderer
       .create(
-        <Button
-          color="primary"
-          style={styles.bgColor}
-          variant="fab"
-          aria-label="Checkout"
-        >
+        <Button color="primary" style={styles.bgColor} aria-label="Checkout">
           Click Here
         </Button>
       )
@@ -25,7 +21,8 @@ describe('<Button/>', () => {
     expect(tree).toMatchSnapshot();
   });
   it('renders correctly with empty props', () => {
-    const tree = renderer.create(<Button />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const shallowRender = new ShallowRenderer();
+    const button = shallowRender.render(<Button />);
+    expect(button).toMatchSnapshot();
   });
 });
