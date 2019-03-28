@@ -25,7 +25,6 @@ const defaultProps = {
   switchProps: {},
 };
 
-/* eslint-disable react/no-array-index-key */
 const CustomSwitch = ({ ...props }) => {
   const { formControlLabelProps, switchProps } = props;
 

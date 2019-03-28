@@ -44,10 +44,10 @@
     "lint:js:fix": "npm run lint:eslint -- . --fix",
     "pretest": "npm run test:clean",
     "test:clean": "rimraf ./reports/coverage",
-    "test": "cross-env NODE_ENV=test jest --coverage=false",
-    "test:watch": "jest --watch",
-    "test:update-snapshot": "jest --updateSnapshot --coverage=false",
-    "test:coverage": "npm run test:clean && jest --coverage"
+    "test": "cross-env NODE_ENV=test jest",
+    "test:watch": "npm run test -- --watch --coverage=false",
+    "test:update-snapshot": "npm run test -- --updateSnapshot --coverage=false",
+    "test:coverage": "npm run test -- --coverage"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.2",
