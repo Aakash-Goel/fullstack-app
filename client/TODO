@@ -1,8 +1,7 @@
 1. add “commitlintmsg” - Aakash - DONE
 2. fix hooks command - Aakash - DONE
 3. add more basic atoms - Aakash
-4. add fonts, icons - Aakash
-5. stylelintrc (css in js) - Aakash
+4. add fonts (DONE), icons - Aakash
 5. refine/add npm scripts, pre-commit hook - Aakash - DONE
 6. add proper documentation to all the files - Aakash
 7. update README file - Aakash
@@ -10,7 +9,7 @@
 
 9. Storybook development - Sachin
 
-10. setup test cases in jest and update the scripts command accordingly - Amresh
+10. setup test cases in jest and update the scripts command accordingly - Amresh - DONE
 
 11. travis-ci - Shivam
 
@@ -20,4 +19,3 @@
 14. lighthouse
 15. Theme
 16. jsDoc
-17. flow
