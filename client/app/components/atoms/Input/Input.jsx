@@ -1,6 +1,7 @@
 import React from 'react';
 import { object, bool, node, string } from 'prop-types';
 import classNames from 'classnames';
+import { isEmpty } from 'lodash';
 
 import withStyles from '@material-ui/core/styles/withStyles';
 import FormControl from '@material-ui/core/FormControl';
@@ -74,7 +75,7 @@ const CustomInput = ({ ...props }) => {
     [classes.whiteInput]: white,
   });
   let formControlClasses;
-  if (formControlProps !== undefined) {
+  if (!isEmpty(formControlProps)) {
     formControlClasses = classNames(
       formControlProps.className,
       classes.formControl
@@ -85,7 +86,7 @@ const CustomInput = ({ ...props }) => {
 
   return (
     <FormControl {...formControlProps} className={formControlClasses}>
-      {labelText !== undefined ? (
+      {labelText && (
         <InputLabel
           className={`${classes.labelRoot} ${labelClasses}`}
           htmlFor={id}
@@ -93,7 +94,7 @@ const CustomInput = ({ ...props }) => {
         >
           {labelText}
         </InputLabel>
-      ) : null}
+      )}
       <Input
         classes={{
           input: inputClasses,

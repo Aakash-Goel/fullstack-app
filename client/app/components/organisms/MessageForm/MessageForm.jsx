@@ -7,6 +7,7 @@ import Button from '../../atoms/Button';
 
 import ServiceUtil from '../../../utils/serviceUtil';
 
+/* istanbul ignore next */
 class MessageForm extends Component {
   constructor(props) {
     super(props);

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { object, arrayOf } from 'prop-types';
+import { isEmpty } from 'lodash';
 
 import withStyles from '@material-ui/core/styles/withStyles';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -29,7 +30,7 @@ const defaultProps = {
 const CustomRadio = ({ ...props }) => {
   const { radioGroupProps, options } = props;
 
-  if (radioGroupProps) {
+  if (!isEmpty(radioGroupProps)) {
     return (
       <RadioGroup {...radioGroupProps}>
         {options &&
