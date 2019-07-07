@@ -1,11 +1,12 @@
 import {
   primaryColor,
-  errorColor,
   successColor,
-  defaultFont,
-} from '../../../styles/theme/muiKit';
+  errorColor,
+  whiteColor,
+  greyColor,
+} from 'app-styles/theme/muiKit';
 
-const inputStyles = {
+const inputStyles = () => ({
   disabled: {
     '&:before': {
       borderColor: 'transparent !important',
@@ -13,11 +14,7 @@ const inputStyles = {
   },
   underline: {
     '&:hover:not($disabled):before,&:before': {
-      borderColor: '#D2D2D2 !important',
-      borderWidth: '1px !important',
-    },
-    '&:after': {
-      borderColor: primaryColor,
+      borderColor: `${greyColor} !important`,
     },
   },
   underlineError: {
@@ -32,22 +29,15 @@ const inputStyles = {
   },
   whiteUnderline: {
     '&:hover:not($disabled):before,&:before': {
-      borderColor: '#FFFFFF',
+      borderColor: whiteColor,
     },
     '&:after': {
-      borderColor: '#FFFFFF',
+      borderColor: whiteColor,
     },
   },
   labelRoot: {
-    ...defaultFont,
-    color: '#AAAAAA',
+    color: greyColor,
     fontWeight: '400',
-    fontSize: '14px',
-    lineHeight: '1.42857',
-    top: '10px',
-    '& + $underline': {
-      marginTop: '0px',
-    },
   },
   labelRootError: {
     color: `${errorColor} !important`,
@@ -56,32 +46,28 @@ const inputStyles = {
     color: `${successColor} !important`,
   },
   formControl: {
-    margin: '0 0 17px 0',
-    paddingTop: '27px',
+    fontWeight: 500,
     position: 'relative',
     '& svg,& .fab,& .far,& .fal,& .fas,& .material-icons': {
-      color: '#495057',
+      color: greyColor,
     },
   },
   input: {
-    color: '#495057',
+    color: primaryColor,
+    fontWeight: '400',
     '&,&::placeholder': {
-      fontSize: '14px',
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-      fontWeight: '400',
-      lineHeight: '1.42857',
       opacity: '1',
     },
     '&::placeholder': {
-      color: '#AAAAAA',
+      color: greyColor,
     },
   },
   whiteInput: {
     '&,&::placeholder': {
-      color: '#FFFFFF',
+      color: whiteColor,
       opacity: '1',
     },
   },
-};
+});
 
 export default inputStyles;

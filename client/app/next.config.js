@@ -5,7 +5,7 @@
  *
  */
 
-const router = require('./routes');
+const router = require('../routes'); // eslint-disable-line module-resolver/use-alias
 
 /**
  * Module variables.
@@ -16,6 +16,11 @@ const initExport = {
   // webpack: (config, { dev, isServer }) => {
   webpack: (config, { dev }) => {
     // const prod = !dev;
+
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
 
     if (dev) {
       config.module.rules.push({

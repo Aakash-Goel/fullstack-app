@@ -1,6 +1,6 @@
 import React from 'react';
 import { object, bool, oneOf, node, string } from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import withStyles from '@material-ui/core/styles/withStyles';
 import Button from '@material-ui/core/Button';
@@ -40,6 +40,7 @@ const propTypes = {
   justIcon: bool,
   children: node,
   className: string,
+  textTransform: oneOf(['cap', 'iht', 'lwc', 'nn', 'upc']),
 };
 
 /**
@@ -47,7 +48,7 @@ const propTypes = {
  * @private
  */
 const defaultProps = {
-  color: '',
+  color: 'primary',
   size: '',
   simple: false,
   round: true,
@@ -59,6 +60,7 @@ const defaultProps = {
   justIcon: false,
   children: null,
   className: '',
+  textTransform: 'upc',
 };
 
 const CustomButton = ({ ...props }) => {
@@ -76,10 +78,11 @@ const CustomButton = ({ ...props }) => {
     justIcon,
     outlined,
     className,
+    textTransform,
     ...rest
   } = props;
 
-  const btnClasses = classNames({
+  const btnClasses = classnames({
     [classes.button]: true,
     [classes[size]]: size,
     [classes[color]]: color,
@@ -91,6 +94,7 @@ const CustomButton = ({ ...props }) => {
     [classes.block]: block,
     [classes.link]: link,
     [classes.justIcon]: justIcon,
+    [classes[textTransform]]: textTransform,
     [className]: className,
   });
 

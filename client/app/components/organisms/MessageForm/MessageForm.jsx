@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 
-import GridContainer from '../../atoms/Grid/GridContainer';
-import GridItem from '../../atoms/Grid/GridItem';
-import Input from '../../atoms/Input';
-import Button from '../../atoms/Button';
+import { GridContainer, GridItem, Input, Button } from 'app-components';
+import ServiceUtil from 'app-utils/serviceUtil';
 
-import ServiceUtil from '../../../utils/serviceUtil';
+const mszQuery = gql`
+  {
+    messages {
+      _id
+      title
+    }
+  }
+`;
 
 /* istanbul ignore next */
 class MessageForm extends Component {
@@ -96,6 +103,26 @@ class MessageForm extends Component {
       });
   };
 
+  /* eslint-disable react/no-array-index-key, no-underscore-dangle */
+  renderList(messageArr) {
+    let messageList;
+    console.log('messageArr====>> ', messageArr);
+    if (messageArr && messageArr.length > 0) {
+      messageList = messageArr.map((msz, index) => {
+        return (
+          <li key={index}>
+            <p>{msz.title}</p>
+            <p>{msz._id}</p>
+          </li>
+        );
+      });
+    } else {
+      messageList = null;
+    }
+
+    return messageList;
+  }
+
   render() {
     const { message, messageArr } = this.state;
 
@@ -127,15 +154,50 @@ class MessageForm extends Component {
           </GridItem>
           <GridItem xs={10}>
             <h2>List of messages sumitted:</h2>
+            <Query query={mszQuery}>
+              {({ loading, error, data }) => {
+                if (loading) {
+                  return (
+                    <GridContainer
+                      direction="row"
+                      justify="center"
+                      spacing={24}
+                      style={{ padding: 24 }}
+                    >
+                      Loading...
+                    </GridContainer>
+                  );
+                }
+                if (error) {
+                  return (
+                    <GridContainer
+                      direction="row"
+                      justify="center"
+                      spacing={24}
+                      style={{ padding: 24 }}
+                    >
+                      <div>Please Sign In to fetch data</div>
+                    </GridContainer>
+                  );
+                }
+                return (
+                  <React.Fragment>
+                    {data.messages.map(msz => (
+                      <GridItem key={msz._id} xs={6} sm={4} lg={3} xl={2}>
+                        <div>{msz.title}</div>
+                      </GridItem>
+                    ))}
+                  </React.Fragment>
+                );
+              }}
+            </Query>
             <div>
               <Button color="primary" outlined onClick={this.getMessages}>
                 Get All Messages
               </Button>
-              {messageArr && messageArr.length > 0
-                ? messageArr.map((msz, index) => {
-                    return <p key={index}>{msz.title}</p>; // eslint-disable-line react/no-array-index-key
-                  })
-                : null}
+              <div>
+                <ul>{this.renderList(messageArr)}</ul>
+              </div>
             </div>
           </GridItem>
         </GridContainer>

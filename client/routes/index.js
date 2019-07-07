@@ -11,7 +11,12 @@ const routes = require('next-routes')();
 //
 // ------------ ROUTES ---------------
 // @StartRoutes
-routes.add('signin', '/sign_in');
+// below is an example, remove/update according to your needs
+routes.add({
+  name: 'audit-dashboard',
+  pattern: '/account/dashboard',
+  page: 'dashboard',
+});
 // @EndRoutes
 // ------------ ROUTES ---------------
 //

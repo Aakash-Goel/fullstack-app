@@ -1,5 +1,4 @@
 import {
-  grayColor,
   primaryColor,
   secondaryColor,
   infoColor,
@@ -8,37 +7,36 @@ import {
   errorColor,
   blackColor,
   whiteColor,
-} from '../../../styles/theme/muiKit';
+  greyColor,
+} from 'app-styles/theme/muiKit';
 
 const buttonStyles = theme => ({
   button: {
     minHeight: 'auto',
     minWidth: 'auto',
-    backgroundColor: grayColor,
-    color: '#FFFFFF',
+    backgroundColor: greyColor,
+    color: whiteColor,
     boxShadow:
       '0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153, 153, 0.2), 0 1px 5px 0 rgba(153, 153, 153, 0.12)',
     border: 'none',
-    borderRadius: '3px',
     position: 'relative',
     padding: '12px 26px',
     margin: '.3125rem 1px',
-    fontSize: '14px',
-    fontWeight: '400',
-    textTransform: 'uppercase',
+    fontSize: '16px',
+    fontWeight: '500',
     letterSpacing: '0',
     willChange: 'box-shadow, transform',
     transition:
       'box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-    lineHeight: '1.42857143',
+    lineHeight: '1.5',
     textAlign: 'center',
     whiteSpace: 'nowrap',
     verticalAlign: 'middle',
     touchAction: 'manipulation',
     cursor: 'pointer',
     '&:hover,&:focus': {
-      color: '#FFFFFF',
-      backgroundColor: grayColor,
+      color: whiteColor,
+      backgroundColor: greyColor,
       boxShadow:
         '0 14px 26px -12px rgba(153, 153, 153, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(153, 153, 153, 0.2)',
     },
@@ -81,9 +79,10 @@ const buttonStyles = theme => ({
     boxShadow:
       '0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12)',
     '&:hover,&:focus': {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.primary.dark,
       boxShadow:
         '0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2)',
+      transition: 'all .5s',
     },
   },
   secondary: {
@@ -201,8 +200,13 @@ const buttonStyles = theme => ({
     },
   },
   simple: {
-    '&,&:focus,&:hover,&:visited': {
-      color: '#FFFFFF',
+    '&': {
+      color: greyColor,
+      background: 'transparent',
+      boxShadow: 'none',
+    },
+    '&:hover': {
+      color: blackColor,
       background: 'transparent',
       boxShadow: 'none',
     },
@@ -262,13 +266,16 @@ const buttonStyles = theme => ({
       },
     },
     '&$github': {
-      '&,&:focus,&:hover,&:visited': {
+      '&': {
         color: '#333333',
+      },
+      '&:hover,&:focus': {
+        color: whiteColor,
       },
     },
   },
   transparent: {
-    '&,&:focus,&:hover,&:visited': {
+    '&,&:hover': {
       color: 'inherit',
       background: 'transparent',
       boxShadow: 'none',
@@ -301,6 +308,9 @@ const buttonStyles = theme => ({
       backgroundColor: 'transparent',
       color: '#999999',
       boxShadow: 'none',
+      margin: 0,
+      padding: 0,
+      lineHeight: '1.5',
     },
     '&:hover,&:focus': {
       color: '#999999',
@@ -532,6 +542,21 @@ const buttonStyles = theme => ({
         height: '17px',
       },
     },
+  },
+  cap: {
+    textTransform: 'capitalize',
+  },
+  iht: {
+    textTransform: 'inherit',
+  },
+  lwc: {
+    textTransform: 'lowercase',
+  },
+  nn: {
+    textTransform: 'none',
+  },
+  upc: {
+    textTransform: 'uppercase',
   },
 });
 

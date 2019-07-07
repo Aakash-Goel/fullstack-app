@@ -9,7 +9,7 @@ import {
   number,
   oneOf,
 } from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import withStyles from '@material-ui/core/styles/withStyles';
 import Button from '@material-ui/core/Button';
@@ -26,7 +26,7 @@ const propTypes = {
       onClick: func,
     })
   ).isRequired,
-  color: oneOf(['primary', 'info', 'success', 'warning', 'danger']),
+  color: oneOf(['primary', 'info', 'success', 'warning', 'error']),
 };
 
 const defaultProps = {
@@ -39,7 +39,7 @@ const Pagination = ({ ...props }) => {
   return (
     <ul className={classes.pagination}>
       {pages.map((prop, key) => {
-        const paginationLink = classNames({
+        const paginationLink = classnames({
           [classes.paginationLink]: true,
           [classes[color]]: prop.active,
           [classes.disabled]: prop.disabled,

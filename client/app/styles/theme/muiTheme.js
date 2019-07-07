@@ -33,7 +33,8 @@ import {
   infoColor,
   successColor,
   warningColor,
-  grayColor,
+  greyColor,
+  brandColor,
   primaryFontFamily,
 } from './muiKit';
 
@@ -57,16 +58,16 @@ const muiTheme = {
       main: errorColor,
     },
     custom: {
-      color: {
-        info: infoColor,
-        success: successColor,
-        warning: warningColor,
-        grey: grayColor,
-      },
+      info: infoColor,
+      success: successColor,
+      warning: warningColor,
+      grey: greyColor,
+      brand: brandColor,
     },
   },
   typography: {
     fontFamily: primaryFontFamily,
+    useNextVariants: true,
   },
 };
 
