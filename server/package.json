@@ -45,7 +45,7 @@
     "express": "^4.16.4",
     "graphql": "^14.1.1",
     "ip": "^1.1.5",
-    "mongoose": "^5.4.16"
+    "mongoose": "^5.7.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
